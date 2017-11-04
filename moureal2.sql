@@ -25,7 +25,7 @@ CREATE TABLE `wp_commentmeta` (
   `comment_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `meta_key` varchar(255)  DEFAULT NULL,
   `meta_value` longtext 
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 -- --------------------------------------------------------
 
@@ -49,7 +49,7 @@ CREATE TABLE `wp_comments` (
   `comment_type` varchar(20)  NOT NULL DEFAULT '',
   `comment_parent` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Volcado de datos para la tabla `wp_comments`
@@ -78,7 +78,7 @@ CREATE TABLE `wp_links` (
   `link_rel` varchar(255)  NOT NULL DEFAULT '',
   `link_notes` mediumtext  NOT NULL,
   `link_rss` varchar(255)  NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 -- --------------------------------------------------------
 
@@ -133,7 +133,7 @@ CREATE TABLE `wp_my_calendar` (
   `event_fifth_week` int(1) NOT NULL DEFAULT '1',
   `event_image` text ,
   `event_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 -- --------------------------------------------------------
 
@@ -148,7 +148,7 @@ CREATE TABLE `wp_my_calendar_categories` (
   `category_icon` varchar(128)  NOT NULL,
   `category_private` int(1) NOT NULL DEFAULT '0',
   `category_term` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Volcado de datos para la tabla `wp_my_calendar_categories`
@@ -169,7 +169,7 @@ CREATE TABLE `wp_my_calendar_events` (
   `occur_begin` datetime NOT NULL,
   `occur_end` datetime NOT NULL,
   `occur_group_id` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 -- --------------------------------------------------------
 
@@ -194,7 +194,7 @@ CREATE TABLE `wp_my_calendar_locations` (
   `location_phone` varchar(32)  NOT NULL,
   `location_phone2` varchar(32)  NOT NULL,
   `location_access` text 
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 -- --------------------------------------------------------
 
@@ -207,7 +207,7 @@ CREATE TABLE `wp_options` (
   `option_name` varchar(191)  NOT NULL DEFAULT '',
   `option_value` longtext  NOT NULL,
   `autoload` varchar(20)  NOT NULL DEFAULT 'yes'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Volcado de datos para la tabla `wp_options`
@@ -529,7 +529,7 @@ CREATE TABLE `wp_postmeta` (
   `post_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `meta_key` varchar(255)  DEFAULT NULL,
   `meta_value` longtext 
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Volcado de datos para la tabla `wp_postmeta`
@@ -955,7 +955,7 @@ CREATE TABLE `wp_posts` (
   `post_type` varchar(20)  NOT NULL DEFAULT 'post',
   `post_mime_type` varchar(100)  NOT NULL DEFAULT '',
   `comment_count` bigint(20) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Volcado de datos para la tabla `wp_posts`
@@ -1083,7 +1083,7 @@ CREATE TABLE `wp_termmeta` (
   `term_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `meta_key` varchar(255)  DEFAULT NULL,
   `meta_value` longtext 
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 -- --------------------------------------------------------
 
@@ -1096,7 +1096,7 @@ CREATE TABLE `wp_terms` (
   `name` varchar(200)  NOT NULL DEFAULT '',
   `slug` varchar(200)  NOT NULL DEFAULT '',
   `term_group` bigint(10) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Volcado de datos para la tabla `wp_terms`
@@ -1117,7 +1117,7 @@ CREATE TABLE `wp_term_relationships` (
   `object_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `term_order` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Volcado de datos para la tabla `wp_term_relationships`
@@ -1162,7 +1162,7 @@ CREATE TABLE `wp_term_taxonomy` (
   `description` longtext  NOT NULL,
   `parent` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `count` bigint(20) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Volcado de datos para la tabla `wp_term_taxonomy`
@@ -1184,7 +1184,7 @@ CREATE TABLE `wp_usermeta` (
   `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `meta_key` varchar(255)  DEFAULT NULL,
   `meta_value` longtext 
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Volcado de datos para la tabla `wp_usermeta`
@@ -1260,7 +1260,7 @@ CREATE TABLE `wp_users` (
   `user_activation_key` varchar(255)  NOT NULL DEFAULT '',
   `user_status` int(11) NOT NULL DEFAULT '0',
   `display_name` varchar(250)  NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Volcado de datos para la tabla `wp_users`
