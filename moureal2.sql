@@ -23,8 +23,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `wp_commentmeta` (
   `meta_id` bigint(20) UNSIGNED NOT NULL,
   `comment_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
-  `meta_key` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `meta_value` longtext COLLATE utf8mb4_unicode_520_ci
+  `meta_key` varchar(255)  DEFAULT NULL,
+  `meta_value` longtext 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -36,17 +36,17 @@ CREATE TABLE `wp_commentmeta` (
 CREATE TABLE `wp_comments` (
   `comment_ID` bigint(20) UNSIGNED NOT NULL,
   `comment_post_ID` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
-  `comment_author` tinytext COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `comment_author_email` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `comment_author_url` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `comment_author_IP` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `comment_author` tinytext  NOT NULL,
+  `comment_author_email` varchar(100)  NOT NULL DEFAULT '',
+  `comment_author_url` varchar(200)  NOT NULL DEFAULT '',
+  `comment_author_IP` varchar(100)  NOT NULL DEFAULT '',
   `comment_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `comment_date_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `comment_content` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `comment_content` text  NOT NULL,
   `comment_karma` int(11) NOT NULL DEFAULT '0',
-  `comment_approved` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '1',
-  `comment_agent` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `comment_type` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `comment_approved` varchar(20)  NOT NULL DEFAULT '1',
+  `comment_agent` varchar(255)  NOT NULL DEFAULT '',
+  `comment_type` varchar(20)  NOT NULL DEFAULT '',
   `comment_parent` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
@@ -66,18 +66,18 @@ INSERT INTO `wp_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `c
 
 CREATE TABLE `wp_links` (
   `link_id` bigint(20) UNSIGNED NOT NULL,
-  `link_url` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `link_name` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `link_image` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `link_target` varchar(25) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `link_description` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `link_visible` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'Y',
+  `link_url` varchar(255)  NOT NULL DEFAULT '',
+  `link_name` varchar(255)  NOT NULL DEFAULT '',
+  `link_image` varchar(255)  NOT NULL DEFAULT '',
+  `link_target` varchar(25)  NOT NULL DEFAULT '',
+  `link_description` varchar(255)  NOT NULL DEFAULT '',
+  `link_visible` varchar(20)  NOT NULL DEFAULT 'Y',
   `link_owner` bigint(20) UNSIGNED NOT NULL DEFAULT '1',
   `link_rating` int(11) NOT NULL DEFAULT '0',
   `link_updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `link_rel` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `link_notes` mediumtext COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `link_rss` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT ''
+  `link_rel` varchar(255)  NOT NULL DEFAULT '',
+  `link_notes` mediumtext  NOT NULL,
+  `link_rss` varchar(255)  NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -90,39 +90,39 @@ CREATE TABLE `wp_my_calendar` (
   `event_id` int(11) NOT NULL,
   `event_begin` date NOT NULL,
   `event_end` date NOT NULL,
-  `event_title` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `event_desc` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `event_short` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `event_title` varchar(255)  NOT NULL,
+  `event_desc` text  NOT NULL,
+  `event_short` text  NOT NULL,
   `event_open` int(3) DEFAULT '2',
-  `event_registration` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `event_tickets` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `event_registration` text  NOT NULL,
+  `event_tickets` varchar(255)  NOT NULL,
   `event_time` time DEFAULT NULL,
   `event_endtime` time DEFAULT NULL,
-  `event_recur` char(3) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `event_recur` char(3)  DEFAULT NULL,
   `event_repeats` int(3) DEFAULT NULL,
   `event_status` int(1) NOT NULL DEFAULT '1',
   `event_author` bigint(20) UNSIGNED DEFAULT NULL,
   `event_host` bigint(20) UNSIGNED DEFAULT NULL,
   `event_category` bigint(20) UNSIGNED NOT NULL DEFAULT '1',
-  `event_link` text COLLATE utf8mb4_unicode_520_ci,
+  `event_link` text ,
   `event_post` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `event_link_expires` tinyint(1) NOT NULL,
   `event_location` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
-  `event_label` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `event_street` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `event_street2` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `event_city` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `event_state` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `event_postcode` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `event_region` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `event_country` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `event_url` text COLLATE utf8mb4_unicode_520_ci,
+  `event_label` varchar(255)  NOT NULL,
+  `event_street` varchar(255)  NOT NULL,
+  `event_street2` varchar(255)  NOT NULL,
+  `event_city` varchar(255)  NOT NULL,
+  `event_state` varchar(255)  NOT NULL,
+  `event_postcode` varchar(10)  NOT NULL,
+  `event_region` varchar(255)  NOT NULL,
+  `event_country` varchar(255)  NOT NULL,
+  `event_url` text ,
   `event_longitude` float(10,6) NOT NULL DEFAULT '0.000000',
   `event_latitude` float(10,6) NOT NULL DEFAULT '0.000000',
   `event_zoom` int(2) NOT NULL DEFAULT '14',
-  `event_phone` varchar(32) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `event_phone2` varchar(32) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `event_access` text COLLATE utf8mb4_unicode_520_ci,
+  `event_phone` varchar(32)  NOT NULL,
+  `event_phone2` varchar(32)  NOT NULL,
+  `event_access` text ,
   `event_group` int(1) NOT NULL DEFAULT '0',
   `event_group_id` int(11) NOT NULL DEFAULT '0',
   `event_span` int(1) NOT NULL DEFAULT '0',
@@ -131,7 +131,7 @@ CREATE TABLE `wp_my_calendar` (
   `event_hide_end` int(1) NOT NULL DEFAULT '0',
   `event_holiday` int(1) NOT NULL DEFAULT '0',
   `event_fifth_week` int(1) NOT NULL DEFAULT '1',
-  `event_image` text COLLATE utf8mb4_unicode_520_ci,
+  `event_image` text ,
   `event_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -143,9 +143,9 @@ CREATE TABLE `wp_my_calendar` (
 
 CREATE TABLE `wp_my_calendar_categories` (
   `category_id` int(11) NOT NULL,
-  `category_name` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `category_color` varchar(7) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `category_icon` varchar(128) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `category_name` varchar(255)  NOT NULL,
+  `category_color` varchar(7)  NOT NULL,
+  `category_icon` varchar(128)  NOT NULL,
   `category_private` int(1) NOT NULL DEFAULT '0',
   `category_term` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
@@ -179,21 +179,21 @@ CREATE TABLE `wp_my_calendar_events` (
 
 CREATE TABLE `wp_my_calendar_locations` (
   `location_id` int(11) NOT NULL,
-  `location_label` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `location_street` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `location_street2` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `location_city` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `location_state` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `location_postcode` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `location_region` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `location_url` text COLLATE utf8mb4_unicode_520_ci,
-  `location_country` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `location_label` varchar(255)  NOT NULL,
+  `location_street` varchar(255)  NOT NULL,
+  `location_street2` varchar(255)  NOT NULL,
+  `location_city` varchar(255)  NOT NULL,
+  `location_state` varchar(255)  NOT NULL,
+  `location_postcode` varchar(10)  NOT NULL,
+  `location_region` varchar(255)  NOT NULL,
+  `location_url` text ,
+  `location_country` varchar(255)  NOT NULL,
   `location_longitude` float(10,6) NOT NULL DEFAULT '0.000000',
   `location_latitude` float(10,6) NOT NULL DEFAULT '0.000000',
   `location_zoom` int(2) NOT NULL DEFAULT '14',
-  `location_phone` varchar(32) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `location_phone2` varchar(32) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `location_access` text COLLATE utf8mb4_unicode_520_ci
+  `location_phone` varchar(32)  NOT NULL,
+  `location_phone2` varchar(32)  NOT NULL,
+  `location_access` text 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -204,9 +204,9 @@ CREATE TABLE `wp_my_calendar_locations` (
 
 CREATE TABLE `wp_options` (
   `option_id` bigint(20) UNSIGNED NOT NULL,
-  `option_name` varchar(191) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `option_value` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `autoload` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'yes'
+  `option_name` varchar(191)  NOT NULL DEFAULT '',
+  `option_value` longtext  NOT NULL,
+  `autoload` varchar(20)  NOT NULL DEFAULT 'yes'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -527,8 +527,8 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 CREATE TABLE `wp_postmeta` (
   `meta_id` bigint(20) UNSIGNED NOT NULL,
   `post_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
-  `meta_key` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `meta_value` longtext COLLATE utf8mb4_unicode_520_ci
+  `meta_key` varchar(255)  DEFAULT NULL,
+  `meta_value` longtext 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -936,24 +936,24 @@ CREATE TABLE `wp_posts` (
   `post_author` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `post_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_date_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `post_content` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `post_title` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `post_excerpt` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `post_status` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'publish',
-  `comment_status` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'open',
-  `ping_status` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'open',
-  `post_password` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `post_name` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `to_ping` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `pinged` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `post_content` longtext  NOT NULL,
+  `post_title` text  NOT NULL,
+  `post_excerpt` text  NOT NULL,
+  `post_status` varchar(20)  NOT NULL DEFAULT 'publish',
+  `comment_status` varchar(20)  NOT NULL DEFAULT 'open',
+  `ping_status` varchar(20)  NOT NULL DEFAULT 'open',
+  `post_password` varchar(255)  NOT NULL DEFAULT '',
+  `post_name` varchar(200)  NOT NULL DEFAULT '',
+  `to_ping` text  NOT NULL,
+  `pinged` text  NOT NULL,
   `post_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_modified_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `post_content_filtered` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `post_content_filtered` longtext  NOT NULL,
   `post_parent` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
-  `guid` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `guid` varchar(255)  NOT NULL DEFAULT '',
   `menu_order` int(11) NOT NULL DEFAULT '0',
-  `post_type` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'post',
-  `post_mime_type` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `post_type` varchar(20)  NOT NULL DEFAULT 'post',
+  `post_mime_type` varchar(100)  NOT NULL DEFAULT '',
   `comment_count` bigint(20) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -1081,8 +1081,8 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 CREATE TABLE `wp_termmeta` (
   `meta_id` bigint(20) UNSIGNED NOT NULL,
   `term_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
-  `meta_key` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `meta_value` longtext COLLATE utf8mb4_unicode_520_ci
+  `meta_key` varchar(255)  DEFAULT NULL,
+  `meta_value` longtext 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -1093,8 +1093,8 @@ CREATE TABLE `wp_termmeta` (
 
 CREATE TABLE `wp_terms` (
   `term_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `slug` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `name` varchar(200)  NOT NULL DEFAULT '',
+  `slug` varchar(200)  NOT NULL DEFAULT '',
   `term_group` bigint(10) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -1158,8 +1158,8 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 CREATE TABLE `wp_term_taxonomy` (
   `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL,
   `term_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
-  `taxonomy` varchar(32) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `description` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `taxonomy` varchar(32)  NOT NULL DEFAULT '',
+  `description` longtext  NOT NULL,
   `parent` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `count` bigint(20) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
@@ -1182,8 +1182,8 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 CREATE TABLE `wp_usermeta` (
   `umeta_id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
-  `meta_key` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `meta_value` longtext COLLATE utf8mb4_unicode_520_ci
+  `meta_key` varchar(255)  DEFAULT NULL,
+  `meta_value` longtext 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -1251,15 +1251,15 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 
 CREATE TABLE `wp_users` (
   `ID` bigint(20) UNSIGNED NOT NULL,
-  `user_login` varchar(60) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `user_pass` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `user_nicename` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `user_email` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
-  `user_url` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `user_login` varchar(60)  NOT NULL DEFAULT '',
+  `user_pass` varchar(255)  NOT NULL DEFAULT '',
+  `user_nicename` varchar(50)  NOT NULL DEFAULT '',
+  `user_email` varchar(100)  NOT NULL DEFAULT '',
+  `user_url` varchar(100)  NOT NULL DEFAULT '',
   `user_registered` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `user_activation_key` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `user_activation_key` varchar(255)  NOT NULL DEFAULT '',
   `user_status` int(11) NOT NULL DEFAULT '0',
-  `display_name` varchar(250) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT ''
+  `display_name` varchar(250)  NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
